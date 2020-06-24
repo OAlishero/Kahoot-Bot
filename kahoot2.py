@@ -6,7 +6,6 @@ from selenium.webdriver.common.by import By
 import random as r
 import string
 import time 
-import names as n 
 
 data_right_answers=[] 
 data_qus=0 # number questions
@@ -18,7 +17,7 @@ data_qus=0 # number questions
 
 def collect_data(link, code):
     global data_qus, data_right_answers
-    driver = webdriver.Chrome(executable_path='/home/alisher/Desktop/IB/Drivers/chromedriver')
+    driver = webdriver.Chrome(executable_path='chromedriver') #chromedriver directory
     dummy=0
     driver.get(link)
     if link=='https://kahoot.it/': 
@@ -74,7 +73,7 @@ def collect_data(link, code):
 
 
 def kahoot(link, code, your_name):
-    driver = webdriver.Chrome(executable_path='/home/alisher/Desktop/IB/Drivers/chromedriver')
+    driver = webdriver.Chrome(executable_path='/home/alisher/Desktop/IB/Drivers/chromedriver') #Chromedriver directory
     question=0
     dummy=0
     person= your_name #Your name 
@@ -144,4 +143,5 @@ def complete(link, code, your_name):
 
 #Input the code or link below, then run the script. Make sure you have installed Selenium. (pip install selenium)
 
-complete('https://kahoot.it/challenge/02458870?challenge-id=813074e7-44c0-451a-9982-624a5bd2fbfa_1591016300706', '0434421', 'Alisher') #If you're not using the link as invitation, leave it as 'https://kahoot.it/'. ('kahoot.it' will send an error as the WebDriver requires https:// and stuff)
+complete('https://kahoot.it/', '000000', 'Username') #If you're not using the link as invitation, leave it as 'https://kahoot.it/'. ('kahoot.it' will send an error as the WebDriver requires https:// and stuff)
+#Username stands for the final kahoot user that gets all questions right. 
